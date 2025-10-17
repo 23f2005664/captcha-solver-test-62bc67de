@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated App</title>
+    <style>body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+#captcha-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#captcha-input {
+  width: 80%;
+  padding: 8px;
+  font-size: 1em;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#submit-btn {
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;
+  color: white;
+}
+#submit-btn:hover {
+  background-color: #0056b3;
+}
+#result-message {
+  margin-top: 15px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Captcha Solver</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <h1>Enter the Captcha Solution</h1>
+  <img id="captcha-image" src="captcha.png" alt="Captcha" />
+  <input type="text" id="captcha-input" placeholder="Type the solution here" />
+  <button id="submit-btn">Submit</button>
+  <p id="result-message"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+    <script>document.getElementById('submit-btn').addEventListener('click', function() {
+  const userInput = document.getElementById('captcha-input').value.trim();
+  const resultMessage = document.getElementById('result-message');
+  // Replace 'expectedSolution' with the actual captcha text if known
+  const expectedSolution = 'ABCD';
+  if (userInput === expectedSolution) {
+    resultMessage.textContent = 'Correct!';
+    resultMessage.style.color = 'green';
+  } else {
+    resultMessage.textContent = 'Incorrect, please try again.';
+    resultMessage.style.color = 'red';
+  }
+});</script>
+</body>
+</html>
