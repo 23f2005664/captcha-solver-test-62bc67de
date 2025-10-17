@@ -4,43 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generated App</title>
-    <style>.container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+    <style>body {
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.captcha-image {
-  width: 100%;
+#captcha-image {
+  max-width: 100%;
   height: auto;
-  margin-bottom: 15px;
-}
-#captcha-input {
-  width: 80%;
-  padding: 8px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
-}
-#submit-btn {
-  padding: 8px 16px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-}
-#submit-btn:hover {
-  background-color: #45a049;
-}
-#result-message {
-  margin-top: 15px;
-  font-weight: bold;
 }</style>
 </head>
 <body>
@@ -49,34 +33,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Captcha Challenge</title>
+<title>Captcha Display</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="container">
-  <h1>Enter the text from the image</h1>
-  <img src="captcha.png" alt="Captcha" class="captcha-image" />
-  <input type="text" id="captcha-input" placeholder="Enter captcha" />
-  <button id="submit-btn">Submit</button>
-  <p id="result-message"></p>
+  <h1>Captcha Image</h1>
+  <img id="captcha-image" src="captcha.png" alt="Captcha" />
 </div>
 <script src="script.js"></script>
 </body>
 </html>
-    <script>document.getElementById('submit-btn').addEventListener('click', function() {
-  const userInput = document.getElementById('captcha-input').value.trim();
-  const resultMessage = document.getElementById('result-message');
-
-  // Example: Replace 'EXPECTED_TEXT' with the actual captcha text if known.
-  const expectedText = 'EXPECTED_TEXT'; // <-- Change this to the actual captcha text if known.
-
-  if (userInput.toLowerCase() === expectedText.toLowerCase()) {
-    resultMessage.textContent = 'Correct!';
-    resultMessage.style.color = 'green';
-  } else {
-    resultMessage.textContent = 'Incorrect, please try again.';
-    resultMessage.style.color = 'red';
-  }
-});</script>
+    <script>// No JavaScript needed for static captcha display
+// Placeholder for potential future interactions</script>
 </body>
 </html>
