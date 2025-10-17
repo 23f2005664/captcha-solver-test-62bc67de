@@ -5,90 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generated App</title>
     <style>body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 .container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
-h1 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
 }
 #captcha-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
 }
-#captcha-input {
-  width: 80%;
-  padding: 8px;
-  font-size: 1em;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+#solution-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 #submit-btn {
-  padding: 8px 16px;
-  font-size: 1em;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  background-color: #007BFF;
-  color: white;
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 #submit-btn:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
-#result-message {
-  margin-top: 15px;
-  font-weight: bold;
-}
-</style>
+#message {
+    margin-top: 15px;
+    font-weight: bold;
+}</style>
 </head>
 <body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Captcha Solver</title>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captcha Solver</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-  <h1>Enter the Captcha Solution</h1>
-  <img id="captcha-image" src="captcha.png" alt="Captcha" />
-  <input type="text" id="captcha-input" placeholder="Type the solution here" />
-  <button id="submit-btn">Submit</button>
-  <p id="result-message"></p>
-</div>
-<script src="script.js"></script>
+    <div class="container">
+        <h1>Captcha Challenge</h1>
+        <img src="captcha.png" alt="Captcha Image" id="captcha-image" />
+        <input type="text" id="solution-input" placeholder="Enter solution here" />
+        <button id="submit-btn">Submit</button>
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
     <script>document.getElementById('submit-btn').addEventListener('click', function() {
-  const userInput = document.getElementById('captcha-input').value.trim();
-  const resultMessage = document.getElementById('result-message');
-  // Replace 'expectedSolution' with the actual captcha text if known
-  const expectedSolution = 'ABCD';
-  if (userInput === expectedSolution) {
-    resultMessage.textContent = 'Correct!';
-    resultMessage.style.color = 'green';
-  } else {
-    resultMessage.textContent = 'Incorrect, please try again.';
-    resultMessage.style.color = 'red';
-  }
+    const input = document.getElementById('solution-input').value.trim();
+    const messageDiv = document.getElementById('message');
+    if(input === '') {
+        messageDiv.textContent = 'Please enter a solution.';
+        messageDiv.style.color = 'red';
+        return;
+    }
+    // Here you can add validation logic for the input if needed
+    // For demonstration, assume the correct solution is 'abc123'
+    if(input.toLowerCase() === 'abc123') {
+        messageDiv.textContent = 'Correct!';
+        messageDiv.style.color = 'green';
+    } else {
+        messageDiv.textContent = 'Incorrect, please try again.';
+        messageDiv.style.color = 'red';
+    }
 });</script>
 </body>
 </html>
